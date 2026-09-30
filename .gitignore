@@ -1,0 +1,25 @@
+.gradle/
+.gradle-local/
+.idea/
+local.properties
+**/build/
+*.iml
+.env
+__pycache__/
+.pytest_cache/
+
+# Local credentials and signing material
+**/google-services.json
+**/rekol-release.keystore
+*.jks
+*.keystore
+
+# Generated/runtime artifacts
+*.log
+/*.png
+/*.jpg
+/*.jpeg
+*.apk
+admin-dashboard/dist/
+admin-dashboard/node_modules/
+backend-java/target/

@@ -1,0 +1,16 @@
+server:
+  port: ${PORT:8001}
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/rekol}
+    username: ${DATABASE_USER:rekol}
+    password: ${DATABASE_PASSWORD:rekol}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non_null
+rekol:
+  dev-otp-bypass: ${DEV_OTP_BYPASS:false}
+  session-hours: ${SESSION_HOURS:24}
