@@ -7,12 +7,15 @@ local.properties
 .env
 __pycache__/
 .pytest_cache/
+.DS_Store
 
 # Local credentials and signing material
 **/google-services.json
 **/rekol-release.keystore
 *.jks
 *.keystore
+output/android/*.properties
+**/AppIcon-1024-alpha-backup.png
 
 # Generated/runtime artifacts
 *.log
@@ -23,3 +26,6 @@ __pycache__/
 admin-dashboard/dist/
 admin-dashboard/node_modules/
 backend-java/target/
+ios/**/DerivedData/
+ios/**/xcuserdata/
+*.xcuserstate

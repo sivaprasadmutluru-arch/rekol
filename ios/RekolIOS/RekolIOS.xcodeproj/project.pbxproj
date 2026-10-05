@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A0000012C9DA00100ABC001 /* RekolIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000112C9DA00100ABC001 /* RekolIOSApp.swift */; };
+		8A0000022C9DA00100ABC001 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000122C9DA00100ABC001 /* Models.swift */; };
+		8A0000032C9DA00100ABC001 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000132C9DA00100ABC001 /* APIClient.swift */; };
+		8A0000042C9DA00100ABC001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000142C9DA00100ABC001 /* AppState.swift */; };
+		8A0000052C9DA00100ABC001 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000152C9DA00100ABC001 /* Views.swift */; };
+		8A0000072C9DA00100ABC001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0000172C9DA00100ABC001 /* Assets.xcassets */; };
+		8A0000082C9DA00100ABC001 /* FirebasePhoneAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0000192C9DA00100ABC001 /* FirebasePhoneAuthService.swift */; };
+		8A0000092C9DA00100ABC001 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00001A2C9DA00100ABC001 /* AuthService.swift */; };
+		8A0100012C9DA00100ABC001 /* Resources/rekol_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A0100112C9DA00100ABC001 /* Resources/rekol_bold.ttf */; };
+		8A0100062C9DA00100ABC001 /* Resources/rekol_mobile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0100162C9DA00100ABC001 /* Resources/rekol_mobile_icon.png */; };
+		8A0100072C9DA00100ABC001 /* Resources/rekol_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A0100172C9DA00100ABC001 /* Resources/rekol_regular.ttf */; };
+		8A0100082C9DA00100ABC001 /* Resources/rekol_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A0100182C9DA00100ABC001 /* Resources/rekol_semibold.ttf */; };
+		8A01000A2C9DA00100ABC001 /* Resources/rekol_welcome_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A01001A2C9DA00100ABC001 /* Resources/rekol_welcome_background.png */; };
+		8A01000F2C9DA00100ABC001 /* Resources/google_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A01001F2C9DA00100ABC001 /* Resources/google_logo.png */; };
+		8AFB00052C9DA00100ABC001 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8AFB00042C9DA00100ABC001 /* FirebaseAuth */; };
+		8AFB00072C9DA00100ABC001 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8AFB00062C9DA00100ABC001 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A0000102C9DA00100ABC001 /* Rekol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rekol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0000112C9DA00100ABC001 /* RekolIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekolIOSApp.swift; sourceTree = "<group>"; };
+		8A0000122C9DA00100ABC001 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8A0000132C9DA00100ABC001 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8A0000142C9DA00100ABC001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8A0000152C9DA00100ABC001 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		8A0000162C9DA00100ABC001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A0000172C9DA00100ABC001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A0000182C9DA00100ABC001 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		8A0000192C9DA00100ABC001 /* FirebasePhoneAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePhoneAuthService.swift; sourceTree = "<group>"; };
+		8A00001A2C9DA00100ABC001 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8A00001B2C9DA00100ABC001 /* RekolIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RekolIOS.entitlements; sourceTree = "<group>"; };
+		8A0100112C9DA00100ABC001 /* Resources/rekol_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Resources/rekol_bold.ttf; sourceTree = "<group>"; };
+		8A0100162C9DA00100ABC001 /* Resources/rekol_mobile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resources/rekol_mobile_icon.png; sourceTree = "<group>"; };
+		8A0100172C9DA00100ABC001 /* Resources/rekol_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Resources/rekol_regular.ttf; sourceTree = "<group>"; };
+		8A0100182C9DA00100ABC001 /* Resources/rekol_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Resources/rekol_semibold.ttf; sourceTree = "<group>"; };
+		8A01001A2C9DA00100ABC001 /* Resources/rekol_welcome_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resources/rekol_welcome_background.png; sourceTree = "<group>"; };
+		8A01001F2C9DA00100ABC001 /* Resources/google_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resources/google_logo.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A0000202C9DA00100ABC001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AFB00052C9DA00100ABC001 /* FirebaseAuth in Frameworks */,
+				8AFB00072C9DA00100ABC001 /* FirebaseCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A0000302C9DA00100ABC001 = {
+			isa = PBXGroup;
+			children = (
+				8A0000312C9DA00100ABC001 /* RekolIOS */,
+				8A0000322C9DA00100ABC001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A0000312C9DA00100ABC001 /* RekolIOS */ = {
+			isa = PBXGroup;
+			children = (
+				8A0000112C9DA00100ABC001 /* RekolIOSApp.swift */,
+				8A0000122C9DA00100ABC001 /* Models.swift */,
+				8A0000132C9DA00100ABC001 /* APIClient.swift */,
+				8A00001A2C9DA00100ABC001 /* AuthService.swift */,
+				8A0000192C9DA00100ABC001 /* FirebasePhoneAuthService.swift */,
+				8A0000142C9DA00100ABC001 /* AppState.swift */,
+				8A0000152C9DA00100ABC001 /* Views.swift */,
+				8A0000162C9DA00100ABC001 /* Info.plist */,
+				8A00001B2C9DA00100ABC001 /* RekolIOS.entitlements */,
+				8A0000172C9DA00100ABC001 /* Assets.xcassets */,
+				8A0000182C9DA00100ABC001 /* Resources */,
+				8A0100112C9DA00100ABC001 /* Resources/rekol_bold.ttf */,
+				8A01001F2C9DA00100ABC001 /* Resources/google_logo.png */,
+				8A0100162C9DA00100ABC001 /* Resources/rekol_mobile_icon.png */,
+				8A0100172C9DA00100ABC001 /* Resources/rekol_regular.ttf */,
+				8A0100182C9DA00100ABC001 /* Resources/rekol_semibold.ttf */,
+				8A01001A2C9DA00100ABC001 /* Resources/rekol_welcome_background.png */,
+			);
+			path = RekolIOS;
+			sourceTree = "<group>";
+		};
+		8A0000322C9DA00100ABC001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A0000102C9DA00100ABC001 /* Rekol.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A0000402C9DA00100ABC001 /* RekolIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A0000702C9DA00100ABC001 /* Build configuration list for PBXNativeTarget "RekolIOS" */;
+			buildPhases = (
+				8A0000502C9DA00100ABC001 /* Sources */,
+				8A0000202C9DA00100ABC001 /* Frameworks */,
+				8A0000602C9DA00100ABC001 /* Resources */,
+				8AFB00082C9DA00100ABC001 /* Copy Optional GoogleService-Info.plist */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RekolIOS;
+			packageProductDependencies = (
+				8AFB00042C9DA00100ABC001 /* FirebaseAuth */,
+				8AFB00062C9DA00100ABC001 /* FirebaseCore */,
+			);
+			productName = Rekol;
+			productReference = 8A0000102C9DA00100ABC001 /* Rekol.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A0000412C9DA00100ABC001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8A0000402C9DA00100ABC001 = {
+						CreatedOnToolsVersion = 16.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 8A0000712C9DA00100ABC001 /* Build configuration list for PBXProject "RekolIOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A0000302C9DA00100ABC001;
+			packageReferences = (
+				8AFB00012C9DA00100ABC001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 8A0000322C9DA00100ABC001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A0000402C9DA00100ABC001 /* RekolIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A0000602C9DA00100ABC001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A0000072C9DA00100ABC001 /* Assets.xcassets in Resources */,
+				8A0100012C9DA00100ABC001 /* Resources/rekol_bold.ttf in Resources */,
+				8A01000F2C9DA00100ABC001 /* Resources/google_logo.png in Resources */,
+				8A0100062C9DA00100ABC001 /* Resources/rekol_mobile_icon.png in Resources */,
+				8A0100072C9DA00100ABC001 /* Resources/rekol_regular.ttf in Resources */,
+				8A0100082C9DA00100ABC001 /* Resources/rekol_semibold.ttf in Resources */,
+				8A01000A2C9DA00100ABC001 /* Resources/rekol_welcome_background.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AFB00082C9DA00100ABC001 /* Copy Optional GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Optional GoogleService-Info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nDEST=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleService-Info.plist\"\nif [ -f \"${SRCROOT}/RekolIOS/GoogleService-Info.plist\" ]; then\n  cp \"${SRCROOT}/RekolIOS/GoogleService-Info.plist\" \"$DEST\"\nelif [ -f \"${SRCROOT}/RekolIOS/Resources/GoogleService-Info.plist\" ]; then\n  cp \"${SRCROOT}/RekolIOS/Resources/GoogleService-Info.plist\" \"$DEST\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A0000502C9DA00100ABC001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A0000012C9DA00100ABC001 /* RekolIOSApp.swift in Sources */,
+				8A0000022C9DA00100ABC001 /* Models.swift in Sources */,
+				8A0000032C9DA00100ABC001 /* APIClient.swift in Sources */,
+				8A0000092C9DA00100ABC001 /* AuthService.swift in Sources */,
+				8A0000042C9DA00100ABC001 /* AppState.swift in Sources */,
+				8A0000052C9DA00100ABC001 /* Views.swift in Sources */,
+				8A0000082C9DA00100ABC001 /* FirebasePhoneAuthService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A0000802C9DA00100ABC001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APS_ENVIRONMENT = development;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RekolIOS/RekolIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = WP5SXG68SW;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RekolIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rekol.app;
+				PRODUCT_BUNDLE_PACKAGE_TYPE = APPL;
+				PRODUCT_NAME = Rekol;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A0000812C9DA00100ABC001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APS_ENVIRONMENT = production;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RekolIOS/RekolIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = WP5SXG68SW;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = RekolIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rekol.app;
+				PRODUCT_BUNDLE_PACKAGE_TYPE = APPL;
+				PRODUCT_NAME = Rekol;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A0000822C9DA00100ABC001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+			};
+			name = Debug;
+		};
+		8A0000832C9DA00100ABC001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A0000702C9DA00100ABC001 /* Build configuration list for PBXNativeTarget "RekolIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A0000802C9DA00100ABC001 /* Debug */,
+				8A0000812C9DA00100ABC001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A0000712C9DA00100ABC001 /* Build configuration list for PBXProject "RekolIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A0000822C9DA00100ABC001 /* Debug */,
+				8A0000832C9DA00100ABC001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AFB00012C9DA00100ABC001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AFB00042C9DA00100ABC001 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AFB00012C9DA00100ABC001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8AFB00062C9DA00100ABC001 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AFB00012C9DA00100ABC001 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8A0000412C9DA00100ABC001 /* Project object */;
+}
