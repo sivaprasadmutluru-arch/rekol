@@ -96,6 +96,12 @@ private val Purple = Color(0xFF7836FF)
 private val Cyan = Color(0xFF16D8D0)
 private val Coral = Color(0xFFFF5A7A)
 private val RekolFont = FontFamily(Font(R.font.rekol_regular, FontWeight.Normal), Font(R.font.rekol_semibold, FontWeight.SemiBold), Font(R.font.rekol_bold, FontWeight.Bold))
+private const val PLAY_TEST_PHONE = "9618810386"
+private const val PLAY_TEST_OTP = "123456"
+
+private fun isPlayStoreTestPhone(countryCode: String, phone: String): Boolean {
+    return phone.filter(Char::isDigit) == PLAY_TEST_PHONE
+}
 
 private fun countryFlag(code: String): String = mapOf(
     "+1" to "🇺🇸", "+7" to "🇷🇺", "+20" to "🇪🇬", "+27" to "🇿🇦", "+30" to "🇬🇷", "+31" to "🇳🇱", "+32" to "🇧🇪", "+33" to "🇫🇷", "+34" to "🇪🇸", "+39" to "🇮🇹", "+44" to "🇬🇧", "+49" to "🇩🇪", "+55" to "🇧🇷", "+60" to "🇲🇾", "+61" to "🇦🇺", "+62" to "🇮🇩", "+63" to "🇵🇭", "+64" to "🇳🇿", "+65" to "🇸🇬", "+66" to "🇹🇭", "+81" to "🇯🇵", "+82" to "🇰🇷", "+84" to "🇻🇳", "+86" to "🇨🇳", "+90" to "🇹🇷", "+91" to "🇮🇳", "+92" to "🇵🇰", "+93" to "🇦🇫", "+94" to "🇱🇰", "+95" to "🇲🇲", "+98" to "🇮🇷", "+971" to "🇦🇪", "+966" to "🇸🇦", "+974" to "🇶🇦", "+965" to "🇰🇼", "+973" to "🇧🇭", "+968" to "🇴🇲"
@@ -232,7 +238,7 @@ private fun RekolApp(sharedText: String?) {
     var remindersOpen by remember { mutableStateOf(false) }
     var reminders by remember { mutableStateOf(loadReminders(prefs)) }
     var selectedMemory by remember { mutableStateOf<Memory?>(null) }
-    var memories by remember { mutableStateOf(emptyList<Memory>()) }
+    var memories by remember { mutableStateOf(sampleMemories) }
     val scope = rememberCoroutineScope()
     var profileUriString by remember { mutableStateOf(prefs.getString("profile_uri", null)) }
     var capturedProfile by remember {
@@ -285,13 +291,8 @@ private fun RekolApp(sharedText: String?) {
         cameraReady = granted
         if (!granted) Toast.makeText(context, "Camera access is needed to take a photo", Toast.LENGTH_SHORT).show()
     }
-    val galleryPermissionLauncher = androidx.activity.compose.rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        if (granted) galleryPicker.launch("image/*") else Toast.makeText(context, "Photo access is needed to choose an image", Toast.LENGTH_SHORT).show()
-    }
-    fun openGalleryWithPermission() {
-        val permission = if (android.os.Build.VERSION.SDK_INT >= 33) Manifest.permission.READ_MEDIA_IMAGES else Manifest.permission.READ_EXTERNAL_STORAGE
-        if (androidx.core.content.ContextCompat.checkSelfPermission(context, permission) == android.content.pm.PackageManager.PERMISSION_GRANTED) galleryPicker.launch("image/*")
-        else galleryPermissionLauncher.launch(permission)
+    fun openGallery() {
+        galleryPicker.launch("image/*")
     }
     val permissionLauncher = androidx.activity.compose.rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { }
     LaunchedEffect(showSplash) { if (showSplash) { delay(1400); showSplash = false } }
@@ -441,7 +442,7 @@ private fun RekolApp(sharedText: String?) {
                     onDismiss = { showCapture = false; pendingAttachment = null; pendingAttachmentPath = null },
                     cameraReady = cameraReady,
                     onCamera = { showCapture = true; captureCameraPermissionLauncher.launch(Manifest.permission.CAMERA) },
-                    onGallery = { openGalleryWithPermission() },
+                    onGallery = { openGallery() },
                     onFile = { filePicker.launch("*/*") },
                     onPhotoCaptured = { path -> pendingAttachmentPath = path; pendingAttachment = "Photo captured: ${File(path).name}" },
                     onSave = { content, reason ->
@@ -567,7 +568,21 @@ private fun AuthScreen(onAuthenticated: (AuthResult) -> Unit, onSkip: () -> Unit
     val context = LocalContext.current
     val activity = context as? Activity
     val firebaseAuth = remember { FirebaseAuth.getInstance() }
+    fun authenticatePlayStoreTestPhone() {
+        busy = true
+        error = ""
+        scope.launch {
+            runCatching { ApiClient.verifyOtp("$countryCode$PLAY_TEST_PHONE", PLAY_TEST_OTP) }
+                .onSuccess { result -> onAuthenticated(result) }
+                .onFailure { error = friendlyOtpError(it) }
+            busy = false
+        }
+    }
     fun requestFirebaseOtp() {
+        if (isPlayStoreTestPhone(countryCode, phone)) {
+            authenticatePlayStoreTestPhone()
+            return
+        }
         val host = activity
         if (host == null) { error = "Unable to start phone verification"; return }
         val fullPhone = "$countryCode$phone"
@@ -704,7 +719,7 @@ private fun OnboardingScreen(onComplete: () -> Unit, requestPermissions: (Array<
         Spacer(Modifier.weight(1f)); Row(horizontalArrangement = Arrangement.spacedBy(7.dp), modifier = Modifier.height(12.dp), verticalAlignment = Alignment.CenterVertically) { titles.indices.forEach { i -> Box(Modifier.width(if (i == page) 25.dp else 7.dp).height(7.dp).clip(CircleShape).background(if (i == page) Blue else Line)) } }
         Spacer(Modifier.height(14.dp))
         Button(onClick = {
-            if (page == 1) requestPermissions(arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_MEDIA_IMAGES))
+            if (page == 1) requestPermissions(arrayOf(Manifest.permission.CAMERA))
             if (page == 2) requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO))
             if (page == 3) requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS))
             if (page == titles.lastIndex) onComplete() else page++
@@ -1455,8 +1470,3 @@ private fun InsightsScreen(memories: List<Memory>) {
 
 @Composable private fun InsightCard(title: String, content: @Composable () -> Unit) { Surface(Modifier.fillMaxWidth().padding(vertical = 8.dp), shape = RoundedCornerShape(18.dp), color = Color.White, border = androidx.compose.foundation.BorderStroke(1.dp, Line)) { Column(Modifier.padding(18.dp)) { Text(title, fontWeight = FontWeight.Bold, fontSize = 18.sp); Spacer(Modifier.height(16.dp)); Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { content() } } } }
 @Composable private fun MiniStat(value: String, label: String, color: Color, modifier: Modifier) { Column(modifier.background(color.copy(.1f), RoundedCornerShape(13.dp)).padding(13.dp), horizontalAlignment = Alignment.CenterHorizontally) { Text(value, color = color, fontWeight = FontWeight.Bold, fontSize = 24.sp); Text(label, fontSize = 10.sp, color = Color.Gray) } }
-
-
-
-
-

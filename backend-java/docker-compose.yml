@@ -14,6 +14,7 @@ services:
       DATABASE_URL: jdbc:postgresql://postgres:5432/rekol
       DATABASE_USER: rekol
       DATABASE_PASSWORD: rekol
+      PORT: "8000"
       DEV_OTP_BYPASS: "true"
     ports: ["8000:8000"]
 volumes:

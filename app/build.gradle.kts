@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -7,13 +9,13 @@ plugins {
 
 android {
     namespace = "com.rekol.app"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.rekol.app"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
+        targetSdk = 36
+        versionCode = 5
         versionName = "0.1.0"
         buildConfigField("String", "REKOL_API_URL", "\"https://wefyx.pro/rekol-api\"")
     }
@@ -26,11 +28,19 @@ android {
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     signingConfigs {
         create("release") {
-            val releaseStore = rootProject.file("rekol-release.keystore")
-            storeFile = releaseStore
-            storePassword = providers.gradleProperty("REKOL_KEYSTORE_PASSWORD").orNull ?: System.getenv("REKOL_KEYSTORE_PASSWORD")
-            keyAlias = providers.gradleProperty("REKOL_KEY_ALIAS").orNull ?: System.getenv("REKOL_KEY_ALIAS")
-            keyPassword = providers.gradleProperty("REKOL_KEY_PASSWORD").orNull ?: System.getenv("REKOL_KEY_PASSWORD")
+            val localSigningProperties = Properties().apply {
+                val localFile = rootProject.file("output/android/rekol-upload-keystore.properties")
+                if (localFile.exists()) localFile.inputStream().use(::load)
+            }
+            fun signingValue(name: String): String? =
+                providers.gradleProperty(name).orNull
+                    ?: System.getenv(name)
+                    ?: localSigningProperties.getProperty(name)
+
+            storeFile = rootProject.file(signingValue("REKOL_KEYSTORE_FILE") ?: "rekol-release.keystore")
+            storePassword = signingValue("REKOL_KEYSTORE_PASSWORD")
+            keyAlias = signingValue("REKOL_KEY_ALIAS")
+            keyPassword = signingValue("REKOL_KEY_PASSWORD")
         }
     }
     buildTypes {
